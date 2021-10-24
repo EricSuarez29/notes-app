@@ -9,10 +9,11 @@ const passport = require('passport');
 const app = express();
 require('./database');
 require('./config/passport');
+require('./config/config')
 
 // Settings
 
-app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.PORT);
 app.set('views', path.resolve(__dirname, './views'));
 app.engine('.hbs', hbs({
     defaultLayout: 'main',

@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
+require('./config/config');
 
-mongoose.connect('mongodb://localhost/notes-db-app',{
+mongoose.connect(process.env.CONEXION,{
     useNewUrlParser: true,
 })
 .then(db => console.log(`DB is connected`))
