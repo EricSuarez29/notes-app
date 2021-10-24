@@ -1,0 +1,47 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid mx-3">
+        <a class="navbar-brand" href="/">
+            <img src="/img/node-js-brands.svg" alt="" width="30" height="24" class="d-inline-block align-text-top">
+            Notes App
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto ms-5 ms-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/about">Acerca</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav mb-2 mb-lg-0 me-end me-lg-5 pe-lg-5 ms-5 ms-lg-0">
+                {{#if user}}
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Notas
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="/notes"><i class="fas fa-sticky-note"></i> Todas las Notas</a></li>
+                        <li><a class="dropdown-item" href="/notes/add"><i class="far fa-sticky-note"></i> Agregar Nota</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="/users/logout"><i class="fas fa-sign-out-alt"></i> Salir</a></li>
+                    </ul>
+                </li>
+                {{else}}
+                <li class="nav-item">
+                    <a class="nav-link active" href="/users/signin">Iniciar Sesión</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/users/signup">Registrarse</a>
+                </li>
+                {{/if}}
+            </ul>
+        </div>
+    </div>
+</nav>
